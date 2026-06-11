@@ -38,7 +38,7 @@
             width: 100%;
         }
 
-        /* ================= LUXURY HEADER & NAVIGATION ================= */
+        /* ================= LUXURY HEADER & BUTTONS ================= */
         header {
             background-color: var(--card-white);
             border-bottom: 2px solid var(--luxury-light);
@@ -52,25 +52,30 @@
         }
 
         .brand-title {
+            font-family: var(--font-main);
             font-size: 32px;
+            letter-spacing: 1px;
             color: var(--luxury-dark);
             font-weight: 600;
             margin-bottom: 5px;
         }
 
         .brand-subtitle {
+            font-family: var(--font-main);
             font-size: 15px;
             color: var(--accent-gold);
+            letter-spacing: 1px;
             margin-bottom: 30px;
         }
 
-        /* แถบเมนูปุ่มกดที่เสมอกันกว้างเต็มพื้นที่หน้าจอ */
+        /* แถบเมนูปุ่มกดขยายกว้างแผ่เต็มหน้าจอ */
         .navigation-grid {
             display: flex;
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
             width: 100%;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 2%;
         }
@@ -102,14 +107,14 @@
             border-color: var(--accent-gold);
         }
 
-        /* ================= MAIN CONTAINER (ปรับให้ขยายกว้างเต็มหน้าจอ) ================= */
+        /* ================= MAIN CONTAINER ขยายเต็มหน้าจอ 100% ================= */
         .main-container {
             width: 100%;
             margin: 40px 0;
-            padding: 0 4%; /* เว้นระยะขอบซ้ายขวาของหน้าจอ 4% เพื่อความสวยงาม */
+            padding: 0 4% !important;
         }
 
-        /* ================= กล่องเนื้อหาสีขาวกว้างขวางเต็มตา ================= */
+        /* ================= กล่องเนื้อหาสีขาวขยายกว้างเต็มหน้าจอ 100% ================= */
         .content-block {
             background-color: var(--card-white);
             border-radius: 16px;
@@ -120,10 +125,9 @@
             width: 100%;
         }
 
-        /* 🌟 ระบบการจัดวาง Layout แบบสากล (ขยายเต็มหน้าจอ และปรับสัดส่วนตามอุปกรณ์ได้) */
         .overview-hero, .veggie-layout {
             display: flex;
-            flex-direction: column; /* เรียงจากบนลงล่าง เพื่อขยายข้อความและรูปภาพให้กว้างเต็มขอบจอคอมพิวเตอร์ */
+            flex-direction: column;
             width: 100%;
         }
 
@@ -132,51 +136,50 @@
             margin-bottom: 25px;
         }
 
-        .content-block h2 {
-            font-family: var(--font-serif);
-            font-size: 38px;
-            margin-bottom: 20px;
-        }
-
-        .content-block h3 {
-            font-family: var(--font-serif);
-            font-size: 34px;
-            margin-bottom: 20px;
-        }
-
-        /* 🖼️ ปรับสไตล์รูปภาพให้ใหญ่ คมชัด และยืดหดตามความกว้างหน้าจออัตโนมัติ */
+        /* รูปภาพหลักล็อก Aspect Ratio สมดุลทุกขนาดหน้าจอ */
         .hero-img, .veggie-img {
             width: 100%;
-            height: auto; /* 🌟 เปลี่ยนจาก 500px เป็น auto เพื่อให้ความสูงยืดหดตามสัดส่วนจริงของรูป */
-            max-height: 550px; /* จำกัดความสูงสูงสุดไม่ให้ภาพล้นจอเกินไป */
-            object-fit: contain; /* 🌟 สั่งให้รักษาสัดส่วนดั้งเดิมของภาพ หน้าไม่แบน ไม่เบี้ยวแน่นอน */
-            border-radius: 12px;
+            aspect-ratio: 16 / 9;
+            height: clamp(300px, 45vh, 520px);
+            object-fit: cover;
+            object-position: center 30%;
+            border-radius: 16px;
             box-shadow: var(--box-shadow);
-            margin-top: 25px;
+            margin-top: 15px;
             display: block;
         }
 
-        /* 📸 ส่วนสไลด์ภาพรวมโชว์ผลงานบรรยากาศ */
+        /* ================= 📸 PREMIUM AUTO SLIDER CSS ================= */
         .slider-section {
-            margin-top: 50px;
+            margin-top: 40px;
             border-top: 1px solid var(--luxury-light);
             padding-top: 40px;
             width: 100%;
+            overflow: hidden; /* ล็อกไม่ให้ขอบรูปสไลด์ล้นหน้าจอ */
         }
 
         .premium-slider-container {
             display: flex;
             gap: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 25px;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            width: 100%;
+            width: max-content;
+            /* 🌟 สั่งให้แถบสไลด์วิ่งอัตโนมัติแบบต่อเนื่องลูปไม่รู้จบ */
+            animation: thidaAutoSlide 25s linear infinite;
+        }
+
+        /* เมื่อเอาเมาส์มาวางชี้ ให้ภาพหยุดนิ่งชั่วคราว */
+        .premium-slider-container:hover {
+            animation-play-state: paused !important;
+        }
+
+        @keyframes thidaAutoSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* วนลูปกลับมาตำแหน่งเดิมไร้รอยสะดุด */
         }
 
         .slide-item {
-            flex: 0 0 auto; /* 🌟 ปรับให้ขนาดกว้างยืดหยุ่นตามรูปภาพ */
+            flex: 0 0 clamp(280px, 35vw, 500px);
+            max-width: 85vw;
+            aspect-ratio: 4 / 3;
             scroll-snap-align: start;
             border-radius: 12px;
             overflow: hidden;
@@ -184,15 +187,14 @@
             border: 1px solid rgba(10, 30, 18, 0.05);
         }
 
-        /* ปรับให้รูปในสไลด์รักษาสัดส่วนดั้งเดิม ไม่ถูกบีบอัด */
         .slide-photo {
-            width: auto;
-            height: 340px; /* กำหนดความสูงมาตรฐาน */
-            max-width: 100%;
-            object-fit: contain; /* 🌟 ป้องกันการบีบอัดสัดส่วนภาพในสไลด์ */
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
         }
 
-        /* แผงการ์ดกิจกรรม 3 ใบด้านล่าง */
+        /* การ์ดกิจกรรม 3 ใบด้านล่างสุด */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -208,11 +210,10 @@
             border: 1px solid rgba(0,0,0,0.04);
         }
 
-        /* 3 การ์ดกิจกรรมขั้นตอนด้านล่างสุด */
         .card-img {
-            height: 260px;
             width: 100%;
-            object-fit: cover; /* 🌟 ล็อกสัดส่วนการ์ดสรุปด้านล่างให้เท่ากันสวยงาม */
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
             background-size: cover;
             background-position: center;
         }
@@ -239,8 +240,20 @@
             letter-spacing: 3px;
             color: var(--accent-gold);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: block;
+        }
+
+        .content-block h2 {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .content-block h3 {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            margin-bottom: 20px;
         }
 
         .veggie-desc {
@@ -278,10 +291,9 @@
             border-radius: 4px;
         }
 
-        /* สำหรับอุปกรณ์หน้าจอเล็กหรือมือถือ */
         @media (max-width: 768px) {
             .content-block { padding: 25px; }
-            .hero-img, .veggie-img { height: 320px; }
+            .hero-img, .veggie-img { aspect-ratio: 4 / 3; height: auto; }
             .content-block h2 { font-size: 28px; }
             .content-block h3 { font-size: 26px; }
         }
@@ -309,55 +321,4 @@
     </header>
 
     <div class="main-container">
-
-        <!-- 🏠 ================= 00. OVERVIEW PAGE (หน้าแรก) ================= -->
-        <div id="overview" class="content-block">
-            <div class="overview-hero">
-                <div class="hero-text-content">
-                    <div class="group-tag">โรงเรียนธิดานุเคราะห์</div>
-                    <h2 style="font-family: var(--font-serif); font-size: 40px; margin-bottom-center: 20px;">ห้องเรียนบูรณาการ ผักสวนครัวในรั่วธิดา</h2>
-                    <p style="color: #55665C;">มุ่งเน้นการสอนให้เด็กๆ ได้ลงมือปฏิบัติจริงตั้งแต่ การเลือกกิ่งพันธุ์ การเลือกเมล็ดพันธุ์ การฟูมฟัก และการเฝ้าสังเกตุความมหัศจรรย์ของพืชพรรณในทุกๆ เช้า</p>
-
-<!-- 📸 แท็กเปิดส่วนสไลด์ (บังคับไม่ให้ขอบภาพล้นหน้าจอคอมพิวเตอร์) -->
-<div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 40px; border-top: 1px solid var(--luxury-light); padding-top: 40px;">
-    
-    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ (ฝังคำสั่งเคลื่อนที่และสร้าง Keyframes ในแท็กโดยตรงเพื่อให้ภาพไหลทันที) -->
-    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
-        
-        <!-- แทรกคำสั่งระบุการขยับสไลด์ในรูปแแบบพิเศษ -->
-        <style>
-            @keyframes thidaAutoSlide {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); } /* สไลด์เลื่อนแบบวนลูปไร้รอยต่อ */
-            }
-            /* เมื่อผู้ปกครองหรือคุณครูเอาเมาส์มาวางชี้ที่รูป ให้ภาพหยุดนิ่งชั่วคราวเพื่อความพรีเมียม */
-            .premium-slider-container:hover {
-                animation-play-state: paused !important;
-            }
-        </style>
-
-        <!-- 📸 ชุดรูปภาพรอบที่ 1 (ล็อกสัดส่วนและรักษาสมดุล Balance ตามโครงสร้างของคุณครูเป๊ะๆ) -->
-        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('img/page_index/03.jpg'); background-size: cover; background-position: center;"></div>
-        </div>
-        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('img/page_index/04.jpg'); background-size: cover; background-position: center;"></div>
-        </div>
-        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('img/page_index/05.jpg'); background-size: cover; background-position: center;"></div>
-        </div>
-
-        <!-- 📸 ชุดรูปภาพรอบที่ 2 (ก๊อปปี้รูปซ้ำเพื่อสร้างลูปสไลด์อัตโนมัติไหลลื่นต่อเนื่องไม่มีรอยสะดุด) -->
-        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('img/page_index/03.jpg'); background-size: cover; background-position: center;"></div>
-        </div>
-        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('img/page_index/04.jpg'); background-size: cover; background-position: center;"></div>
-        </div>
-        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('img/page_index/05.jpg'); background-size: cover; background-position: center;"></div>
-        </div>
-
-    </div>
-</div>
 
