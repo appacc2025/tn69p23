@@ -1,3 +1,488 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผักสวนครัวในรั้วธิดา ป.2/3 (ปี 2569)</title>
+    
+    <!-- ฟอนต์พรีเมียม สไตล์โฮมเมดออร์แกนิกหรูหรา -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Anuphan:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================= PREMIUM COLOR PALETTE ================= */
+        :root {
+            --luxury-dark: #0A1E12;     /* สีเขียวป่าลึกออร์แกนิก */
+            --luxury-light: #E8F0EA;    /* สีเขียวอ่อนใบตองพาสเทล */
+            --accent-gold: #D4AF37;     /* สีทองคำหรูหรา */
+            --bg-canvas: #FAF9F6;       /* สีขาวครีมวานิลลาสะอาดตา */
+            --card-white: #FFFFFF;
+            --font-main: 'Anuphan', sans-serif;
+            --font-serif: 'Noto Serif Thai', serif;
+            --box-shadow: 0 15px 40px rgba(10, 30, 18, 0.06);
+        }
+
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-canvas);
+            color: var(--luxury-dark);
+            line-height: 1.7;
+            width: 100%;
+        }
+
+                /* ================= ปรับปรุงแถบเมนูให้เป็นแถวเดียว สไตล์สไลด์พรีเมียมบนมือถือ ================= */
+        header {
+            background-color: var(--card-white);
+            border-bottom: 2px solid var(--luxury-light);
+            padding: 15px 0 10px 0 !important; /* 🌟 ลดพื้นที่ด้านบน-ล่างให้กระชับที่สุด เพื่อเพิ่มพื้นที่แสดงผล */
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            width: 100%;
+        }
+
+        .brand-title {
+            font-family: var(--font-main);
+            font-size: clamp(18px, 4.5vw, 26px); /* 🌟 ลดขนาดชื่อหลักลงเล็กน้อยไม่ให้แย่งพื้นที่ */
+            letter-spacing: 1px;
+            color: var(--luxury-dark);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .brand-subtitle {
+            font-family: var(--font-main);
+            font-size: clamp(11px, 2.2vw, 13px); /* 🌟 บีบซับไตเติลให้เล็กและแนบชิดขึ้น */
+            color: var(--accent-gold);
+            letter-spacing: 0.5px;
+            margin-bottom: 12px !important;
+        }
+
+/* 📱 ปรับแต่งรางเมนูให้เรียงแถวเดียวนุ่มนวล ใช้นิ้วปัดซ้าย-ขวาได้ทันที */
+        .navigation-grid {
+            display: flex;
+            justify-content: flex-start; /* 🌟 เปลี่ยนเป็นเรียงจากซ้ายไปขวาเพื่อเปิดการสไลด์ */
+            align-items: center;
+            gap: 8px; /* เว้นช่องไฟระหว่างปุ่มพอดีคำ */
+            flex-wrap: nowrap !important; /* 🌟 บังคับไม่ให้ปุ่มตัดขึ้นบรรทัดใหม่เด็ดขาด */
+            width: 100%;
+            overflow-x: auto; /* 🌟 เปิดฟังก์ชันสไลด์เมนูแนวนอนเมื่อเปิดบนมือถือ */
+            padding: 5px 20px 12px 20px !important; /* เว้นระยะขอบให้สไลด์ไม่หลุดเฟรม */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* ให้การปัดบน iPhone/iPad ลื่นไหลสูงสุด */
+        }
+
+        /* ซ่อนแถบ Scrollbar น่าเกลียดใต้ปุ่มเพื่อความสวยงามพรีเมียม */
+        .navigation-grid::-webkit-scrollbar {
+            display: none; /* ซ่อนบาร์สกรอลล์ */
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            font-size: 13px; /* ขนาดตัวอักษรกำลังพอดี */
+            font-weight: 500;
+            padding: 8px 18px; /* ปรับขนาดปุ่มให้แบนและกระชับขึ้นเพื่อประหยัดพื้นที่แนวตั้ง */
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(10, 30, 18, 0.04);
+            transition: all 0.3s ease;
+            white-space: nowrap; /* ล็อกข้อความปุ่มไม่ให้หักลงบรรทัดใหม่ */
+            background-color: var(--luxury-light);
+            color: var(--luxury-dark);
+            border: 1px solid rgba(10, 30, 18, 0.05);
+            flex-shrink: 0; /* 🌟 สำคัญ: ห้ามปุ่มหดขนาดตัวเองเด็ดขาด */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 🏠 ปุ่มหน้าแรก */
+        .nav-btn-home {
+            background-color: var(--luxury-dark) !important;
+            color: var(--card-white) !important;
+            border: 1px solid var(--luxury-dark);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px rgba(10, 30, 18, 0.12);
+            border-color: var(--accent-gold);
+        }
+
+        /* 💻 สำหรับหน้าจอคอมพิวเตอร์ขนาดใหญ่ ให้เมนูกลับมาอยู่ตรงกลางหน้าจอปกติ */
+        @media (min-width: 1025px) {
+            .navigation-grid {
+                justify-content: center; /* จัดกึ่งกลางบนจอคอม */
+                overflow-x: visible;
+            }
+        }
+
+        /* ================= MAIN CONTAINER (ดึงขึ้นชิดเส้นคั่น) ================= */
+        .main-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important; /* 🌟 ปรับระยะคั่นภายนอกเป็น 0 ทั้งหมดเพื่อไม่ให้เว้นช่องว่าง */
+            padding: 0 4% !important;  /* เว้นระยะขอบซ้ายขวาของจอตามปกติ */
+        }
+
+        /* ================= กล่องเนื้อหาสีขาว (ลบพื้นที่ว่างด้านบนออก) ================= */
+        .content-block {
+            background-color: var(--card-white);
+            border-radius: 16px;
+            
+            /* 🌟 จากเดิม padding: 50px; ให้เปลี่ยนมาแยกสัดส่วนเพื่อลดพื้นที่ว่างด้านบนลงให้ชิดที่สุด */
+            padding: 5px 25px 40px 25px !important; /* ดึงพื้นที่ว่างด้านบนออก เหลือเพียง 5px */
+            
+            box-shadow: var(--box-shadow);
+            margin-top: 0 !important;    /* บังคับให้หัวกล่องชิดขอบบน */
+            margin-bottom: 40px;
+            border: 1px solid rgba(0,0,0,0.02);
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* 🌟 ดึงเนื้อหาภายในฮีโร่และรูปภาพกิจกรรมให้เด้งขึ้นมาชิดขอบกล่องด้านบนทันที */
+        .overview-hero, .veggie-layout {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        .hero-text-content, .veggie-text-content {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            margin-bottom: 5px !important; /* ลดระยะห่างด้านล่างข้อความลงให้กระชับ */
+        }
+
+
+        .content-block h2 {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .content-block h3 {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        /* 🖼️ ปรับสไตล์รูปภาพให้ใหญ่ คมชัด และยืดหดตามความกว้างหน้าจออัตโนมัติ */
+        .hero-img, .veggie-img {
+            width: 100%;
+            height: auto; /* 🌟 เปลี่ยนจาก 500px เป็น auto เพื่อให้ความสูงยืดหดตามสัดส่วนจริงของรูป */
+            max-height: 550px; /* จำกัดความสูงสูงสุดไม่ให้ภาพล้นจอเกินไป */
+            object-fit: contain; /* 🌟 สั่งให้รักษาสัดส่วนดั้งเดิมของภาพ หน้าไม่แบน ไม่เบี้ยวแน่นอน */
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            margin-top: 25px;
+            display: block;
+        }
+
+        /* ================= 📸 ปรับกระชับระยะห่างส่วนสไลด์ภาพอัตโนมัติ ================= */
+        .slider-section {
+            /* 🌟 ปรับลดระยะห่างด้านบนลงจาก 40px/50px ให้เหลือเพียง 15px */
+            margin-top: 15px !important;
+            
+            /* เปลี่ยนเส้นคั่นให้บางและละมุนตาเข้ากับสไตล์ Organic Luxury */
+            border-top: 1px solid rgba(10, 30, 18, 0.08) !important;
+            
+            /* 🌟 ปรับลดพื้นที่ว่างด้านบนใต้เส้นคั่นลงเหลือเพียง 15px */
+            padding-top: 15px !important;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .premium-slider-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 25px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+        .slide-item {
+            flex: 0 0 auto; /* 🌟 ปรับให้ขนาดกว้างยืดหยุ่นตามรูปภาพ */
+            scroll-snap-align: start;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(10, 30, 18, 0.05);
+        }
+
+        /* ปรับให้รูปในสไลด์รักษาสัดส่วนดั้งเดิม ไม่ถูกบีบอัด */
+        .slide-photo {
+            width: auto;
+            height: 340px; /* กำหนดความสูงมาตรฐาน */
+            max-width: 100%;
+            object-fit: contain; /* 🌟 ป้องกันการบีบอัดสัดส่วนภาพในสไลด์ */
+        }
+
+        /* แผงการ์ดกิจกรรม 3 ใบด้านล่าง */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .gallery-card {
+            background-color: var(--bg-canvas);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        /* 3 การ์ดกิจกรรมขั้นตอนด้านล่างสุด */
+        .card-img {
+            height: 260px;
+            width: 100%;
+            object-fit: cover; /* 🌟 ล็อกสัดส่วนการ์ดสรุปด้านล่างให้เท่ากันสวยงาม */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h3 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--luxury-dark);
+        }
+
+        .card-body p {
+            font-size: 14px;
+            color: #617066;
+        }
+
+        .group-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .veggie-desc {
+            font-size: 16px;
+            color: #4A574E;
+        }
+
+        .student-box {
+            border-top: 1px solid var(--luxury-light);
+            padding-top: 25px;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .student-box h4 {
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .student-flex {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .student-badge {
+            background-color: var(--luxury-light);
+            color: var(--luxury-dark);
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+    </style> 
+</head>
+
+<body>
+
+    <!-- LUXURY NAVIGATION HEADER -->
+    <header>
+
+        <!--
+        <div class="brand-title">ผักสวนครัวรั้วธิดา</div>
+        <div class="brand-subtitle">ชั้น ประถมศึกษาปีที่ 2/3 ปีการศึกษา 2569</div>
+        -->
+
+        <div class="navigation-grid">
+            <a href="#overview" class="nav-btn nav-btn-home">🏠 หน้าแรก (ภาพรวม)</a>
+            <a href="#g1" class="nav-btn">🌿 กลุ่ม 1 กรีนโอ๊ค</a>
+            <a href="#g2" class="nav-btn">🥗 กลุ่ม 2 บัตเตอร์เฮด</a>
+            <a href="#g3" class="nav-btn">🥬 กลุ่ม 3 เคล</a>
+            <a href="#g4" class="nav-btn">🌱 กลุ่ม 4 สะระแหน่</a>
+            <a href="#g5" class="nav-btn">🧅 กลุ่ม 5 ต้นหอม</a>
+            <a href="#g6" class="nav-btn">🥦 กลุ่ม 6 ขึ้นช่าย</a>
+            <a href="#g7" class="nav-btn">🍂 กลุ่ม 7 กะเพราแดง</a>
+            <a href="#g8" class="nav-btn">🍃 กลุ่ม 8 โหระพา</a>
+            <a href="#g9" class="nav-btn">🌾 กลุ่ม 9 ผักบุ้ง</a>
+        </div>
+    </header>
+
+        <!-- 🌟 เส้นคั่นใต้เมนูดีไซน์ Luxury (แทรกอยู่ระหว่างแถบเมนูด้านบน และกล่องรูปภาพแบนเนอร์) -->
+        <div class="menu-divider" style="width: 100%; height: 3px; background: linear-gradient(to right, transparent, var(--luxury-light) 15%, var(--accent-gold) 50%, var(--luxury-light) 85%, transparent); margin: 0 auto !important; padding: 0 4% !important;"></div>
+
+
+<div class="main-container">
+
+    <!-- 🏠 ================= 00. OVERVIEW PAGE (หน้าแรก) ================= -->
+    <div id="overview" class="content-block" style="display: flex; flex-direction: column; min-height: auto;">
+
+        <!-- 📸 ชุดรูปภาพรอบที่ 1 ด้านบนสุด -->
+        <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                    background: none; border: none; box-shadow: none;">
+            <img src="00.jpg" alt="" 
+                style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+        </div>
+
+        <!-- ส่วนเนื้อหาข้อความเด่น -->
+        <div class="overview-hero">
+            <div class="hero-text-content">
+                <h2 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 20px; text-align: center;">ห้องเรียนบูรณาการ ผักสวนครัวรั้วธิดา</h2>
+                <p style="color: #55665C; text-align: center;">มุ่งเน้นการสอนให้เด็กๆ ได้ลงมือปฏิบัติจริงตั้งแต่ การเลือกกิ่งพันธุ์ การเลือกเมล็ดพันธุ์ การฟูมฟัก และการเฝ้าสังเกตุความมหัศจรรย์ของพืชพรรณในทุกๆวัน</p>
+            </div>
+        </div>
+
+        <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+        <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+            
+            <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+            <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 35s linear infinite;">
+                
+                <style>
+                    @keyframes thidaAutoSlide {
+                        0% { transform: translateX(0); }
+                        /* เลื่อนไปจนสุดความยาวของชุดภาพแรก (รวม Gap) */
+                        100% { transform: translateX(calc(-50% - 10px)); } 
+                    }
+                    .premium-slider-container:hover {
+                        animation-play-state: paused !important;
+                    }
+                    .slide-item {
+                        flex: 0 0 clamp(280px, 35vw, 500px); 
+                        max-width: 85vw; 
+                        aspect-ratio: 4 / 3; 
+                        border-radius: 12px; 
+                        overflow: hidden; 
+                        box-shadow: var(--box-shadow); 
+                        border: 1px solid rgba(10, 30, 18, 0.05);
+                    }
+                    .slide-photo {
+                        width: 100%; 
+                        height: 100%; 
+                        background-size: cover; 
+                        background-position: center;
+                    }
+                </style>
+
+                <!-- [กลุ่มที่ 1] ชุดรูปภาพหลัก -->
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H01.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H02.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H03.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H04.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H05.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H06.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H07.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H08.jpg');"></div>
+                </div>
+
+                <!-- [กลุ่มที่ 2] ชุดรูปภาพโคลน (ต้องเหมือนกลุ่มที่ 1 ทุกรูปเพื่อความต่อเนื่อง) -->
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H01.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H02.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H03.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H04.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H05.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H06.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H07.jpg');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('H08.jpg');"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- =========================================================================
+        🌟 โครงสร้างหน้าแสดงผลเฉพาะกิจครบทั้ง 9 กลุ่ม (ID: #g1 ถึง #g9)
+        ========================================================================= -->
+
+        <!-- 🥬 กลุ่ม 1 กรีนโอ๊ค -->
+        <div id="g1" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🌿</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 1 กรีนโอ๊ค</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">เด็กๆ กลุ่มที่ 1 ร่วมกันคัดสรรเมล็ดพันธุ์กรีนโอ๊คที่สมบูรณ์ นำมาเพาะ พร้อมเฝ้าดูแลทุกๆวัน</p>-->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+                
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G01.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P01.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
@@ -43,3 +528,777 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🥗 กลุ่ม 2 บัตเตอร์เฮด -->
+        <div id="g2" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+            
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🥗</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 2 บัตเตอร์เฮด</h2>
+                <!-- <p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันตึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p> -->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+                
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G02.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P02.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🥬 กลุ่ม 3 เคล -->
+        <div id="g3" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+            
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🥬</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 3 เคล</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันตึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p>-->
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">         
+                
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G03.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P03.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🌱 กลุ่ม 4 สะระแหน่ -->
+        <div id="g4" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🌱</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 4 สะระแหน่</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันตึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p>-->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G04.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('Prod1.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🧅 กลุ่ม 5 ต้นหอม -->
+        <div id="g5" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🧅</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 5 ต้นหอม</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันทึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p>-->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G05.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P05.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🥦 กลุ่ม 6 คื่นช่าย -->
+        <div id="g6" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+            
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🥦</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 6 ขึ้นช่าย</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันทึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p>-->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G06.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P06.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🍂 กลุ่ม 7 กะเพราแดง -->
+        <div id="g7" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🍂</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 7 กะเพราแดง</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันทึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p>-->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G07.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P07.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🍃 กลุ่ม 8 โหระพา -->
+        <div id="g8" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🍃</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 8 โหระพา</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันทึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p>-->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G08.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P08.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <!-- 🌾 กลุ่ม 9 ผักบุ้ง -->
+        <div id="g9" class="content-block" style="display: flex; flex-direction: column; margin-top: 60px; padding: 25px; background-color: var(--card-white, #ffffff); border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.05)); border: 1px solid rgba(10, 30, 18, 0.05);">
+
+            <!-- ส่วนหัวข้อกลุ่ม 9 -->
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid var(--luxury-light, #EAEAEA); padding-bottom: 15px;">
+                <span style="font-size: 40px; display: block; margin-bottom: 10px;">🌾</span>
+                <h2 style="font-family: var(--font-serif); font-size: 28px; color: #0A1E12; margin: 0;">กลุ่ม 9 ผักบุ้ง</h2>
+                <!--<p style="color: #7A8A80; font-size: 14px; margin: 5px 0 0 0;">บันทึกหัวใจสีเขียวและการดูแลเอาใจใส่ของเด็กๆ</p>-->
+            </div>
+            
+            <!-- ส่วนเนื้อหาหลักและกล่องรูปภาพ -->
+            <div style="display: flex; flex-direction: column; gap: 20px; color: #55665C; line-height: 1.6;">
+
+                <div style="background-color: #F4F7F5; padding: 15px 20px; border-radius: 12px; border-left: 4px solid #55665C;">
+                    <p style="margin: 0; font-size: 15px;">เรียนรู้การเพาะเมล็ดพันธุ์กรีนโอ๊ค การเตรียมวัสดุปลูก และคอยสังเกตการแตกใบอ่อนอย่างใกล้ชิดในทุกๆ เช้า</p>
+                </div>
+
+                    <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
+                            background: none; border: none; box-shadow: none;">
+                    <img src="G09.png" alt="" 
+                        style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
+                    <!-- ผลผลิต -->
+                    <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
+                        <div style="width: 100%; height: 100%; background-image: url('P09.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+                <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+                    
+                    <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                        
+                        <style>
+                            @keyframes thidaAutoSlide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .premium-slider-container:hover {
+                                animation-play-state: paused !important;
+                            }
+                        </style>
+
+                        <!-- ชุดรูปภาพรอบที่ 1 -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
+                        <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ปุ่มกดกลับขึ้นไปหน้าแรก -->
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--luxury-light, #EAEAEA);">
+                <a href="#overview" style="text-decoration: none; display: inline-block;">
+                    <div style="background-color: #0A1E12; border: 1px solid #0A1E12; border-radius: 50px; padding: 12px 28px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(10, 30, 18, 0.15);" 
+                        onmouseover="this.style.backgroundColor='#143522'; this.style.borderColor='#143522'; this.style.transform='translateY(-2px)';" 
+                        onmouseout="this.style.backgroundColor='#0A1E12'; this.style.borderColor='#0A1E12'; this.style.transform='translateY(0)';">
+                        <span style="font-size: 14px; color: #FFFFFF; font-weight: bold;">↑</span>
+                        <span style="font-size: 14px; color: #FFFFFF; font-family: sans-serif; font-weight: 600; letter-spacing: 0.5px;">
+                            กลับไปหน้าแรก
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+        </div> <!-- ปิด #g9 สมบูรณ์ -->
+
+        <!-- 📜 🌟 แถบแสดงลิขสิทธิ์ระดับพรีเมียม (จัดตำแหน่งให้อยู่ล่างสุดชิดขอบและลดช่องว่างอย่างสมบูรณ์) -->
+        <footer style="width: 100%; text-align: center; margin-top: auto; padding: 25px 20px 5px 20px; clear: both;">
+            <p style="font-size: 13px; color: #7A8A80; letter-spacing: 0.5px; margin: 0; padding: 0; font-weight: 400; line-height: 1.5;">
+                &copy; <strong>ประถมศึกษาชั้นปีที่ 2 ห้อง 3 โรงเรียนธิดานุเคราะห์ ปีการศึกษา 2569</strong>
+            </p>
+        </footer>
+
+    </div> <!-- ปิด #overview -->
+</div> <!-- ปิด .main-container -->
