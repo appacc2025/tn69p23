@@ -358,8 +358,8 @@
         <!-- ส่วนเนื้อหาข้อความเด่น -->
         <div class="overview-hero">
             <div class="hero-text-content">
-                <h2 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 20px; text-align: center;">ห้องเรียนบูรณาการ ผักสวนครัวรั้วธิดา</h2>
-                <p style="color: #55665C; text-align: center;">มุ่งเน้นการสอนให้เด็กๆ ได้ลงมือปฏิบัติจริงตั้งแต่ การเลือกกิ่งพันธุ์ การเลือกเมล็ดพันธุ์ การฟูมฟัก และการเฝ้าสังเกตุความมหัศจรรย์ของพืชพรรณในทุกๆวัน</p>
+                <h2 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 20px; text-align: center;">ห้องเรียนบูรณาการ ผักสวนครัวในรั้วธิดา</h2>
+                <p style="color: #55665C; text-align: center;">มุ่งเน้นการสอนให้เด็กๆ ได้ลงมือปฏิบัติจริงตั้งแต่ การเลือกกิ่งพันธุ์ การเลือกเมล็ดพันธุ์ และการเฝ้าสังเกตุความมหัศจรรย์ของพืชพรรณในทุกๆวัน</p>
             </div>
         </div>
 
@@ -367,7 +367,7 @@
         <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
             
             <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-            <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 35s linear infinite;">
+            <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 100s linear infinite;">
                 
                 <style>
                     @keyframes thidaAutoSlide {
@@ -450,6 +450,79 @@
             </div>
         </div>
 
+        <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
+        <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
+            
+            <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
+            <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlideRight 100s linear infinite;">
+                
+                <style>
+                    @keyframes thidaAutoSlideRight {
+                        /* ดึงสไลด์ไปทางซ้ายก่อน แล้วค่อยๆ เลื่อนกลับมาทางขวา */
+                        0% { transform: translateX(-50%); }
+                        100% { transform: translateX(0); }
+                    }
+                    .premium-slider-container:hover {
+                        animation-play-state: paused !important;
+                    }
+                </style>
+
+                <!-- [กลุ่มที่ 1] ชุดรูปภาพหลัก -->
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R01.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R02.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R03.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R04.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R05.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R06.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R07.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R08.png');"></div>
+                </div>
+
+                <!-- [กลุ่มที่ 2] ชุดรูปภาพโคลน (ต้องเหมือนกลุ่มที่ 1 ทุกรูปเพื่อความต่อเนื่อง) -->
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R01.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R02.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R03.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R04.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R05.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R06.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R07.png');"></div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-photo" style="background-image: url('R08.png');"></div>
+                </div>
+
+            </div>
+        </div>
+
+
         <!-- =========================================================================
         🌟 โครงสร้างหน้าแสดงผลเฉพาะกิจครบทั้ง 9 กลุ่ม (ID: #g1 ถึง #g9)
         ========================================================================= -->
@@ -479,7 +552,7 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P01.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                        <div style="width: 100%; height: 100%; background-image: url('P101.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
                             <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
                         </div>
                     </div>
@@ -489,7 +562,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -514,6 +587,24 @@
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
                             <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G105.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G106.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G107.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G108.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G109.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G110.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
@@ -528,6 +619,25 @@
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
                             <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G105.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G106.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G107.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G108.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G109.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G110.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -574,8 +684,8 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P02.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        <div style="width: 100%; height: 100%; background-image: url('P201.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตบัตเตอร์เฮด ]</div>
                         </div>
                     </div>
                 </div>
@@ -584,7 +694,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -598,30 +708,66 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G201.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G202.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G203.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G204.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G205.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G206.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G207.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G208.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G209.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G210.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G201.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G202.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G203.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G204.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G205.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G206.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G207.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G208.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G209.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G210.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                     </div>
                 </div>
@@ -662,15 +808,15 @@
 
                 <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
                             background: none; border: none; box-shadow: none;">
-                    <img src="G03.png" alt="" 
+                            <img src="G03.png" alt="" 
                         style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P03.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        <div style="width: 100%; height: 100%; background-image: url('P301.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตเคล ]</div>
                         </div>
                     </div>
                 </div>
@@ -679,7 +825,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -693,30 +839,66 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G301.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G302.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G303.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G304.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G305.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G306.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G307.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G308.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G309.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G310.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G301.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G302.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G303.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G304.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G305.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G306.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G307.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G308.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G309.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G310.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                     </div>
                 </div>
@@ -764,8 +946,8 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('Prod1.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;"></div>
+                        <div style="width: 100%; height: 100%; background-image: url('P401.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;"><!--[ รูปภาพผลผลิตสะระแหน่ ] --></div>
                         </div>
                     </div>
                 </div>
@@ -774,7 +956,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -788,31 +970,68 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G401.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G402.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G403.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G404.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G405.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G406.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G407.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G408.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G409.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G410.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G401.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G402.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G403.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G404.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G405.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G406.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G407.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G408.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G409.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G410.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -852,15 +1071,15 @@
 
                 <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
                             background: none; border: none; box-shadow: none;">
-                    <img src="G05.png" alt="" 
+                            <img src="G05.png" alt="" 
                         style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P05.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        <div style="width: 100%; height: 100%; background-image: url('P501.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตต้นหอม ]</div>
                         </div>
                     </div>
                 </div>
@@ -869,7 +1088,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -883,30 +1102,66 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G501.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G502.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G503.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G504.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G505.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G506.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G507.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G508.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G509.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G510.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G501.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G502.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G503.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G504.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G505.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G506.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G507.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G508.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G509.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G510.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                     </div>
                 </div>
@@ -954,8 +1209,8 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P06.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        <div style="width: 100%; height: 100%; background-image: url('P601.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตขึ้นฉ่าย ]</div>
                         </div>
                     </div>
                 </div>
@@ -964,7 +1219,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -978,31 +1233,68 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G601.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G602.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G603.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G604.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G605.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G606.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G607.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G608.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G609.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G610.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G601.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G602.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G603.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G604.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G605.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G606.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G607.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G608.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G609.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G610.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1050,8 +1342,8 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P07.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        <div style="width: 100%; height: 100%; background-image: url('P701.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกะเพราแดง ]</div>
                         </div>
                     </div>
                 </div>
@@ -1060,7 +1352,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -1074,30 +1366,66 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G701.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G702.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G703.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G704.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G705.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G706.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G707.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G708.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G709.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G710.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G701.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G702.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G703.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G704.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G705.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G706.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G707.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G708.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G709.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G710.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                     </div>
                 </div>
@@ -1145,8 +1473,8 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P08.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        <div style="width: 100%; height: 100%; background-image: url('P801.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;"><!--[ รูปภาพผลผลิตกรีนโอ๊ค ] --></div>
                         </div>
                     </div>
                 </div>
@@ -1155,7 +1483,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -1169,30 +1497,66 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G801.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G802.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G803.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G804.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G805.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G806.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G807.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G808.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G809.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G810.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G801.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G802.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G803.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G804.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G805.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G806.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G807.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G808.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G809.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G810.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                     </div>
                 </div>
@@ -1235,15 +1599,15 @@
 
                     <div style="width: 100%; max-width: 500px; margin: 0 auto 20px auto; padding: 0; box-sizing: border-box; display: block; overflow: hidden; 
                             background: none; border: none; box-shadow: none;">
-                    <img src="G09.png" alt="" 
+                            <img src="G09.png" alt="" 
                         style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--box-shadow, 0 4px 15px rgba(0,0,0,0.08));">
                     </div>
 
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;">
                     <!-- ผลผลิต -->
                     <div style="aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid rgba(10, 30, 18, 0.05);">
-                        <div style="width: 100%; height: 100%; background-image: url('P09.png'); background-size: cover; background-position: center; background-color: #EAF2EC;">
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;">[ รูปภาพผลผลิตกรีนโอ๊ค ]</div>
+                        <div style="width: 100%; height: 100%; background-image: url('P901.jpg'); background-size: cover; background-position: center; background-color: #EAF2EC;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #A0B0A5; font-size: 14px;"><!--[ รูปภาพผลผลิตผักบุ้ง ]--></div>
                         </div>
                     </div>
                 </div>
@@ -1252,7 +1616,7 @@
                 <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
                     
                     <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
-                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 20s linear infinite;">
+                    <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 70s linear infinite;">
                         
                         <style>
                             @keyframes thidaAutoSlide {
@@ -1266,30 +1630,66 @@
 
                         <!-- ชุดรูปภาพรอบที่ 1 -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G901.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G902.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G903.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G904.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G905.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G906.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G907.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G908.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G909.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G910.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
 
                         <!-- ชุดรูปภาพรอบที่ 2 (ลูปสไลด์อัตโนมัติ) -->
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G101.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G901.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G102.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G902.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G103.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G903.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
-                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G104.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G904.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G905.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G906.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G907.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G908.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G909.jpg'); background-size: cover; background-position: center;"></div>
+                        </div>
+                        <div class="slide-item" style="flex: 0 0 clamp(280px, 35vw, 500px); max-width: 85vw; aspect-ratio: 4 / 3; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: var(--box-shadow); border: 1px solid rgba(10, 30, 18, 0.05);">
+                            <div class="slide-photo" style="width: 100%; height: 100%; background-image: url('G910.jpg'); background-size: cover; background-position: center;"></div>
                         </div>
                     </div>
                 </div>
