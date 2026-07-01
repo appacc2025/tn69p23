@@ -538,7 +538,7 @@
             <div class="hero-text-content">
                 <h2 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 20px; text-align: center;">พื้นที่ทดลองและเรียนรู้</h2>
                 <p style="color: #55665C; text-align: center;"> 
-                    การทดลองปลูกผักสวนครัวในน้ำครั้งนี้ใช้พื้นที่ขนาด 2.0 x 2.5 เมตร มีเป้าหมายเพื่อให้นักเรียนได้มีพื้นที่ในการทดลอง
+                    การทดลองปลูกผักสวนครัวในครั้งนี้มีเป้าหมายเพื่อให้นักเรียนได้ทำการทดลองปลูกพื้นในน้ำด้วยพื้นที่ที่มีจำกัด
                     โดยแบ่งนักเรียนออกเป็น 9 กลุ่ม แต่ละกลุ่มทำการทดลองปลูกพืชต่างชนิดกัน เพื่อให้นักเรียนได้เรียนรู้ ดูแล สังเกตุการเจริญเติบโตของพืชที่นักเรียนได้ปลูกไว้
                     และสามารถเรียนรู้เพิ่มเติมได้จากกลุ่มอื่นๆที่ปลูกพืชต่างชนิดกัน ได้แก่ 1.กรีนโอ๊ค 2.บัตเตอร์เฮด 3.คอส 4.สะระแหน่ 5.ต้นหอม 6.ขึ้นช่าย 7.กะเพราแดง 8.โหระพา 9.ผักบุ้ง
                 </p>
@@ -555,34 +555,56 @@
         <!-- 📸 แท็กเปิดส่วนสไลด์ (ขอบภาพไม่ล้นหน้าจอคอมพิวเตอร์) -->
         <div class="slider-section" style="overflow: hidden; width: 100%; margin-top: 30px; border-top: 1px solid var(--luxury-light); padding-top: 30px;">
             
+            <!-- แถวที่ 1: กล่องวิดีโอ -->
+            <div class="equal-block-row">
+                <video class="video-content" controls>
+                    <source src="Video01.MP4" type="video/mp4">
+                    เบราว์เซอร์ของคุณไม่รองรับวิดีโอนี้
+                </video>
+            </div>
+
+            <br>
+
             <!-- 🌟 รางวิ่งสไลด์ภาพอัตโนมัติ -->
             <div class="premium-slider-container" style="display: flex; gap: 20px; width: max-content; animation: thidaAutoSlide 100s linear infinite;">
                 
                 <style>
                     @keyframes thidaAutoSlide {
                         0% { transform: translateX(0); }
-                        /* เลื่อนไปจนสุดความยาวของชุดภาพแรก (รวม Gap) */
                         100% { transform: translateX(calc(-50% - 10px)); } 
                     }
                     .premium-slider-container:hover {
                         animation-play-state: paused !important;
                     }
-                    .slide-item {
+
+                    /* กล่องข้อความ/ไอเทมหลัก (ใช้ร่วมกันทั้ง Slide และ VDO เพื่อให้ขนาดเท่ากัน) */
+                    .slide-item, .video-item {
                         flex: 0 0 clamp(280px, 35vw, 500px); 
                         max-width: 85vw; 
-                        aspect-ratio: 4 / 3; 
+                        aspect-ratio: 4 / 3; /* ล็อกสัดส่วน 4:3 เหมือนกัน */
                         border-radius: 12px; 
                         overflow: hidden; 
                         box-shadow: var(--box-shadow); 
                         border: 1px solid rgba(10, 30, 18, 0.05);
                     }
+
+                    /* จัดการเนื้อหาภายในสไลด์ภาพ */
                     .slide-photo {
                         width: 100%; 
                         height: 100%; 
                         background-size: cover; 
                         background-position: center;
                     }
+
+                    /* จัดการเนื้อหาภายในช่องวิดีโอให้เต็มกล่อง 4:3 พอดี */
+                    .video-content {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; /* บังคับให้เนื้อหาวิดีโอขยายเต็มพื้นที่ ไม่เหลือขอบดำ */
+                        display: block;
+                    }
                 </style>
+
 
                 <!-- [กลุ่มที่ 1] ชุดรูปภาพหลัก -->
                 <div class="slide-item">
@@ -639,19 +661,17 @@
             </div>
         </div>
 
-    
-        <!-- ส่วนเนื้อหาข้อความเด่น -->
         <div class="overview-hero">
             <div class="hero-text-content">
-                <h2 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 20px; text-align: center;">การดำเนินงานและจัดการพื้นที่</h2>
+                <h2 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 20px; text-align: center;">กว่าจะมาเป็นสวนของเรา</h2>
                 <p style="color: #55665C; text-align: center;">
-                    ผู้ปกครองและนักเรียนชั้น ป.2/3 ห้องครู ตองหทัย เกื้อก่อบุญ ทุกๆคน ได้ร่วมแรงร่วมใจกันพัฒนาพื้นที่แห่งนี้ 
+                    ผู้ปกครองและนักเรียนชั้น ป.2/3 ห้องครู ตองหทัย เกื้อก่อบุญ ทุกๆท่าน ได้ร่วมแรงร่วมใจกันพัฒนาพื้นที่แห่งนี้ 
                     ให้เป็นตัวอย่าง และเป็นแหล่งเรียนรู้ การปลูกผักสวนครัวในน้ำ สำหรับที่อยู่อาศัยที่มีพื้นที่จำกัด 
-                    ผู้ปกครองและเด็กๆ ห้อง ป.2/3 และ คุณครูตั้งใจให้พื้นที่แห่งนี้เป็นแหล่งข้อมูลสำหรับนักเรียน 
-                    และผู้ที่สนใจเข้ามาชมและเรียนรู้ไปพร้อมๆกัน
+                    ผู้ปกครองและนักเรียนห้อง ป.2/3 และ คุณครูตั้งใจให้พื้นที่แห่งนี้เป็นแหล่งข้อมูลสำหรับนักเรียน 
+                    ทุกระดับชั้นและผู้ที่สนใจเข้ามาชมและเรียนรู้ไปพร้อมๆกัน
                 </p>
             </div>
-        </div>
+        </div> 
 
         <br>
 
